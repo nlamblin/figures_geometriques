@@ -5,6 +5,7 @@ import java.awt.Color;
 public class PanneauChoix {
 
 	private FigureColoree fc;
+	private DessinFigures dessin;
 	
 	public PanneauChoix(DessinFigures df) {
 		
