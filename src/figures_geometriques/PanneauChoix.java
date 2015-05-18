@@ -8,7 +8,7 @@ public class PanneauChoix {
 	private DessinFigures dessin;
 	
 	public PanneauChoix(DessinFigures df) {
-		
+		dessin = df;
 	}
 	
 	public FigureColoree creeFigure(int i) {
