@@ -8,11 +8,13 @@ public abstract class FigureColoree {
 	private int TAILLE_CARRE_SELECTION;
 	private int PERIPHERIE_CARRE_SELECTION;
 	private boolean selected;
-	private Color couleur;
-	private Point[] tab_mem;
+	protected Color couleur;
+	protected Point[] tab_mem;
 	
 	public FigureColoree() {
-		
+		selected = false;
+		couleur = Color.BLACK;
+		tab_mem = new Point[nbPoints()];
 	}
 	
 	public abstract int nbPoints();
@@ -23,31 +25,45 @@ public abstract class FigureColoree {
 	
 	public abstract void modifierPoints(Point [] ps);
 	
+	/*
 	public void affiche(Graphics g) {
 		
 	}
+	*/
 	
 	public void translation (int dx, int dy) {
-		
+		for(int i = 0; i<=tab_mem.length; i++) {
+			tab_mem[i].modifierX(dx);
+			tab_mem[i].modifierY(dy);
+		}
 	}
 	
 	public void transformation(int dx, int dy, int indice) {
-		
+		int i = 0;
+		while(i <= tab_mem.length) {
+			if(i == indice) {
+				tab_mem[i].modifierX(dx);
+				tab_mem[i].modifierY(dy);
+			}
+			i++;
+		}
 	}
 	
+	/*
 	public int carreDeSelection(int x, int y) {
 		return 0;
 	}
+	*/
 	
 	public void selectionne() {
-		
+		selected = true;
 	}
 	
 	public void deSelectionne() {
-		
+		selected = false;
 	}
 	
 	public void changeCouleur(Color c) {
-		
+		couleur = c;
 	}
 }
