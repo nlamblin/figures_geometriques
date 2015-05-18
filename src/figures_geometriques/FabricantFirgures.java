@@ -9,7 +9,7 @@ public class FabricantFirgures implements MouseListener{
 	private int nb_points;
 	private Point[] point_cliques;
 	
-	public public FabricantFirgures(FigureColoree fc) {
+	public FabricantFirgures(FigureColoree fc) {
 		figure_encours_de_fabrication = fc;
 	}
 	
