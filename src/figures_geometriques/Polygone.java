@@ -13,7 +13,7 @@ public abstract class Polygone extends FigureColoree {
 	@Override
 	public int nbClics() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 3;
 	}
 
 	@Override

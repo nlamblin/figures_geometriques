@@ -9,7 +9,7 @@ public class Quadrilatere extends Polygone {
 	@Override
 	public int nbPoints() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 4;
 	}
 	
 }
