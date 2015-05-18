@@ -4,8 +4,9 @@ public class Point {
 	
 	private int x, y;
 	
-	public Point(int x, int y) {
-		
+	public Point(int x2, int y2) {
+		x = x2;
+		y = y2;
 	}
 	
 	public double distance(Point p) {
@@ -36,7 +37,7 @@ public class Point {
 		y = y2;
 	}
 	
-	public void translation(int i, int j) {
+	public void translation(int x2, int y2) {
 		
 	}
 }
