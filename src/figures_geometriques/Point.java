@@ -10,7 +10,7 @@ public class Point {
 	}
 	
 	public double distance(Point p2) {
-		return 0;
+		return Math.sqrt((Math.pow(p2.rendreX()-this.rendreX(),2) + (Math.pow(p2.rendreY()-this.rendreY(),2))));
 	}
 	
 	public int rendreX() {
@@ -38,6 +38,7 @@ public class Point {
 	}
 	
 	public void translation(int dx, int dy) {
-		
+		x = dx;
+		y = dy;
 	}
 }
