@@ -5,8 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -21,9 +19,7 @@ public class PanneauChoix extends JPanel{
 	
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
-		final JRadioButton jrb = new JRadioButton("Nouvelle figure");
 		
-		add(jrb);
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle" });
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
@@ -96,15 +92,32 @@ public class PanneauChoix extends JPanel{
 		});
 		jcb.setVisible(false);
 		add(jcb);
+		final JRadioButton jrb = new JRadioButton("Nouvelle figure");
+		add(jrb);
+		final JRadioButton jrb2 = new JRadioButton("Tracé à main levée");
+		add(jrb2);
 		jrb.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange()== ItemEvent.SELECTED){
+					jrb2.setSelected(false);
 					jcbType.setVisible(true);
 					jcb.setVisible(true);
 				}
 				else{
 					jcbType.setVisible(false);
+					jcb.setVisible(false);
+				}
+			}
+		});
+		jrb2.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if (e.getStateChange()== ItemEvent.SELECTED){
+					jrb.setSelected(false);
+					jcb.setVisible(true);
+				}
+				else{
 					jcb.setVisible(false);
 				}
 			}
