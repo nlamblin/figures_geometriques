@@ -4,6 +4,8 @@ import java.awt.Graphics;
 
 public abstract class Polygone extends FigureColoree {
 
+	private Polygone p;
+	
 	public Polygone() {
 		
 	}
@@ -21,7 +23,7 @@ public abstract class Polygone extends FigureColoree {
 	}
 
 	@Override
-	public void modifierPoints(Point[] ps) {
+	public void modifierPoints(Point[] tab_saisie) {
 		// TODO Auto-generated method stub
 		
 	}
