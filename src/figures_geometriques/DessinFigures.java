@@ -14,7 +14,9 @@ public class DessinFigures extends JPanel{
 	}
 	
 	public void paintComponent(Graphics g) {
-		
+		for (FigureColoree fg : lfg){
+			fg.affiche(g);
+		}
 	}
 	
 	public void ajoute(FigureColoree fg) {
@@ -22,6 +24,7 @@ public class DessinFigures extends JPanel{
 	}
 	
 	public void construit(FigureColoree fg) {
-		
+		FabricantFirgures ff = new FabricantFirgures(fg);
+		addMouseListener(ff);
 	}
 }
