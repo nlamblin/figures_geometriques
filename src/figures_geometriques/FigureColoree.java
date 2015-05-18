@@ -25,11 +25,9 @@ public abstract class FigureColoree {
 	
 	public abstract void modifierPoints(Point [] ps);
 	
-	/*
 	public void affiche(Graphics g) {
 		
 	}
-	*/
 	
 	public void translation (int dx, int dy) {
 		for(int i = 0; i<=tab_mem.length; i++) {
@@ -49,11 +47,9 @@ public abstract class FigureColoree {
 		}
 	}
 	
-	/*
 	public int carreDeSelection(int x, int y) {
 		return 0;
 	}
-	*/
 	
 	public void selectionne() {
 		selected = true;
