@@ -5,8 +5,8 @@ import java.awt.Graphics;
 
 public abstract class FigureColoree {
 
-	private int TAILLE_CARRE_SELECTION;
-	private int PERIPHERIE_CARRE_SELECTION;
+	private static final int TAILLE_CARRE_SELECTION = 50;
+	private static final int PERIPHERIE_CARRE_SELECTION = 50;
 	private boolean selected;
 	protected Color couleur;
 	protected Point[] tab_mem;
