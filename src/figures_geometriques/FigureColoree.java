@@ -9,7 +9,7 @@ public abstract class FigureColoree {
 	private int PERIPHERIE_CARRE_SELECTION;
 	private boolean selected;
 	private Color couleur;
-	private Point tab_mem;
+	private Point[] tab_mem;
 	
 	public FigureColoree() {
 		
@@ -27,5 +27,27 @@ public abstract class FigureColoree {
 		
 	}
 	
-	public 
+	public void translation (int dx, int dy) {
+		
+	}
+	
+	public void transformation(int dx, int dy, int indice) {
+		
+	}
+	
+	public int carreDeSelection(int x, int y) {
+		return 0;
+	}
+	
+	public void selectionne() {
+		
+	}
+	
+	public void deSelectionne() {
+		
+	}
+	
+	public void changeCouleur(Color c) {
+		
+	}
 }

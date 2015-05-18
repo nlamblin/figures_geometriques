@@ -9,7 +9,7 @@ public class Point {
 		y = y2;
 	}
 	
-	public double distance(Point p) {
+	public double distance(Point p2) {
 		return 0;
 	}
 	
@@ -21,23 +21,23 @@ public class Point {
 		return y;
 	}
 	
-	public void incrementerX(int x2) {
-		x += x2;
+	public void incrementerX(int incx) {
+		x += incx;
 	}
 	
-	public void incrementerY(int y2) {
-		y += y2;
+	public void incrementerY(int incy) {
+		y += incy;
 	}
 	
-	public void modifierX(int x2) {
-		x = x2;
+	public void modifierX(int x) {
+		this.x = x;
 	}
 
-	public void modifierY(int y2) {
-		y = y2;
+	public void modifierY(int y) {
+		this.y = y;
 	}
 	
-	public void translation(int x2, int y2) {
+	public void translation(int dx, int dy) {
 		
 	}
 }
