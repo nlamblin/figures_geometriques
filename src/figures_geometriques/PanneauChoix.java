@@ -2,7 +2,9 @@ package figures_geometriques;
 
 import java.awt.Color;
 
-public class PanneauChoix {
+import javax.swing.JPanel;
+
+public class PanneauChoix extends JPanel{
 
 	private FigureColoree fc;
 	private DessinFigures dessin;
