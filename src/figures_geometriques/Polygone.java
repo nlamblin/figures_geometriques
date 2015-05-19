@@ -7,7 +7,6 @@ public abstract class Polygone extends FigureColoree {
 	private Polygone p;
 	
 	public Polygone() {
-		
 	}
 
 	@Override
@@ -29,7 +28,7 @@ public abstract class Polygone extends FigureColoree {
 	}
 	
 	public void affiche(Graphics g) {
-	
+		
 	}
 	
 }
