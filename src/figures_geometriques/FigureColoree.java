@@ -48,7 +48,15 @@ public abstract class FigureColoree {
 	}
 	
 	public int carreDeSelection(int x, int y) {
-		return 0;
+		int i = 0;
+		boolean arret = false;
+		while(i <= tab_mem.length && arret == false) {
+			
+			
+			
+			i++;
+		}
+		return i;
 	}
 	
 	public void selectionne() {
