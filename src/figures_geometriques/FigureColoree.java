@@ -47,13 +47,17 @@ public abstract class FigureColoree {
 		}
 	}
 	
+	/*
+	 * A VERIFIER !!!
+	 */
 	public int carreDeSelection(int x, int y) {
 		int i = 0;
 		boolean arret = false;
 		while(i <= tab_mem.length && arret == false) {
-			
-			
-			
+			if(x + tab_mem[i].rendreX() <= PERIPHERIE_CARRE_SELECTION) {
+				if(y + tab_mem[i].rendreY() <= PERIPHERIE_CARRE_SELECTION)
+					arret = true;
+			}
 			i++;
 		}
 		return i;
