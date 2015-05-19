@@ -25,12 +25,11 @@ public abstract class Polygone extends FigureColoree {
 	@Override
 	public void modifierPoints(Point[] tab_saisie) {
 		// TODO Auto-generated method stub
-		
+		tab_saisie = tab_saisie;
 	}
 	
 	public void affiche(Graphics g) {
-		
+	
 	}
-
 	
 }
