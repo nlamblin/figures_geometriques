@@ -38,7 +38,7 @@ public class Point {
 	}
 	
 	public void translation(int dx, int dy) {
-		x = dx;
-		y = dy;
+		x += dx;
+		y += dy;
 	}
 }
