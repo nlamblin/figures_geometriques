@@ -26,7 +26,12 @@ public abstract class FigureColoree {
 	public abstract void modifierPoints(Point [] ps);
 	
 	public void affiche(Graphics g) {
-		
+		int i = 0;
+		while (i< tab_mem.length&& tab_mem[i+1]!=null){
+			g.drawLine(tab_mem[i].rendreX(), tab_mem[i].rendreY(), tab_mem[i+1].rendreX(), tab_mem[i+1].rendreX());
+			i++;
+		}
+		g.drawLine(tab_mem[i].rendreX(),tab_mem[i].rendreY(),tab_mem[0].rendreX(),tab_mem[0].rendreY());
 	}
 	
 	public void translation (int dx, int dy) {
