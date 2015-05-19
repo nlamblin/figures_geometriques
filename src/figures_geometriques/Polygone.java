@@ -1,39 +1,39 @@
 package figures_geometriques;
 
 import java.awt.Graphics;
+import java.awt.Polygon;
 
 public abstract class Polygone extends FigureColoree {
 
-	private Polygone p;
+	private Polygon p;
 	
 	public Polygone() {
+		p = new Polygon();
 	}
 
 	@Override
 	public int nbClics() {
 		// TODO Auto-generated method stub
-		return 3;
+		return p.npoints;
 	}
 
 	@Override
 	public boolean estDedans(int x, int y) {
 		// TODO Auto-generated method stub
-		return false;
+		return p.contains(x, y);
 	}
 
 	@Override
 	public void modifierPoints(Point[] tab_saisie) {
 		// TODO Auto-generated method stub
-		tab_mem = tab_saisie;
+		p.reset();
+		for (Point pt : tab_saisie){
+			p.addPoint(pt.rendreX(),pt.rendreY());
+		}
 	}
 	
 	public void affiche(Graphics g) {
-		int i = 0;
-		while (i< tab_mem.length&& tab_mem[i+1]!=null){
-			g.drawLine(tab_mem[i].rendreX(), tab_mem[i].rendreY(), tab_mem[i+1].rendreX(), tab_mem[i+1].rendreX());
-			i++;
-		}
-		g.drawLine(tab_mem[i].rendreX(),tab_mem[i].rendreY(),tab_mem[0].rendreX(),tab_mem[0].rendreY());
+		g.drawPolygon(p);
 	}
 	
 }

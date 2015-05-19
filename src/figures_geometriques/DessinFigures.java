@@ -24,7 +24,7 @@ public class DessinFigures extends JPanel{
 	}
 	
 	public void construit(FigureColoree fg) {
-		FabricantFirgures ff = new FabricantFirgures(fg);
+		FabricantFigures ff = new FabricantFigures(fg);
 		addMouseListener(ff);
 	}
 }

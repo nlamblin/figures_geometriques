@@ -3,13 +3,13 @@ package figures_geometriques;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class FabricantFirgures implements MouseListener{
+public class FabricantFigures implements MouseListener{
 
 	private FigureColoree figure_encours_de_fabrication;
 	private int nb_points;
 	private Point[] point_cliques;
 	
-	public FabricantFirgures(FigureColoree fc) {
+	public FabricantFigures(FigureColoree fc) {
 		figure_encours_de_fabrication = fc;
 		nb_points = 0;
 	}
