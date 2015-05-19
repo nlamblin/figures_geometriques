@@ -33,7 +33,17 @@ public class FabricantFirgures implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		if(MouseEvent.BUTTON1 == arg0.getButton()) {
+			nb_points = 0;
+			if(nb_points <= 4) {
+				int i = 0;
+				while(i <= point_cliques.length && point_cliques[i] != null) {
+					i++;
+				}
+				
+				nb_points++;
+			}
+		}
 	}
 
 	@Override
