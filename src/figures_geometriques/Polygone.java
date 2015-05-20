@@ -2,6 +2,7 @@ package figures_geometriques;
 
 import java.awt.Graphics;
 import java.awt.Polygon;
+import java.util.ArrayList;
 
 public abstract class Polygone extends FigureColoree {
 
@@ -22,12 +23,11 @@ public abstract class Polygone extends FigureColoree {
 		// TODO Auto-generated method stub
 		return p.contains(x, y);
 	}
-
 	@Override
-	public void modifierPoints(Point[] tab_saisie) {
+	public void modifierPoints(ArrayList<Point> tab_saisie) {
 		// TODO Auto-generated method stub
 		p.reset();
-		for (Point pt : tab_saisie){
+		for (final Point pt : tab_saisie){
 			p.addPoint(pt.rendreX(),pt.rendreY());
 		}
 	}
