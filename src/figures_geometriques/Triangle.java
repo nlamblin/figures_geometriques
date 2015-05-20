@@ -3,7 +3,7 @@ package figures_geometriques;
 public class Triangle extends Polygone {
 	
 	public Triangle() {
-		
+		super();
 	}
 
 	@Override

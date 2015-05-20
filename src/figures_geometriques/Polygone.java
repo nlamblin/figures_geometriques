@@ -27,7 +27,7 @@ public abstract class Polygone extends FigureColoree {
 	public void modifierPoints(ArrayList<Point> tab_saisie) {
 		// TODO Auto-generated method stub
 		p.reset();
-		for (final Point pt : tab_saisie){
+		for (Point pt : tab_saisie){
 			p.addPoint(pt.rendreX(),pt.rendreY());
 		}
 	}
