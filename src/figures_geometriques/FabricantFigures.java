@@ -37,14 +37,7 @@ public class FabricantFigures implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		if(nb_points < 4) {
-			// ajoute le clic dans le tableau
-			nb_points++;
-		}
 		
-		if(nb_points == 4) {
-			// dessiner la figure
-		}
 	}
 
 	@Override
