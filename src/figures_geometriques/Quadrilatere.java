@@ -3,8 +3,7 @@ package figures_geometriques;
 public class Quadrilatere extends Polygone {
 
 	public Quadrilatere() {
-		// TODO Auto-generated constructor stub
-		
+		super();
 	}
 	
 	@Override

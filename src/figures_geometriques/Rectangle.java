@@ -3,6 +3,7 @@ package figures_geometriques;
 public class Rectangle extends Quadrilatere {
 
 	public Rectangle() {
+		super();
 	}
 	
 	public int nbClics() {
@@ -10,7 +11,8 @@ public class Rectangle extends Quadrilatere {
 	}
 	
 	public void modifierPoint(Point[] tab_saisie) {
-		tab_mem = tab_saisie;
+		
+		super.modifierPoints(tab_saisie);
 	}
 	
 	public void transformation(int dx, int dy, int indice) {
