@@ -28,7 +28,7 @@ public abstract class FigureColoree {
 	public void affiche(Graphics g) {
 		int i = 0;
 		while (i< tab_mem.length&& tab_mem[i+1]!=null){
-			g.drawLine(tab_mem[i].rendreX(), tab_mem[i].rendreY(), tab_mem[i+1].rendreX(), tab_mem[i+1].rendreX());
+			g.drawLine(tab_mem[i].rendreX(), tab_mem[i].rendreY(), tab_mem[i+1].rendreX(), tab_mem[i+1].rendreY());
 			i++;
 		}
 	}

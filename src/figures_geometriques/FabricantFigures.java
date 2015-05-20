@@ -3,6 +3,8 @@ package figures_geometriques;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import sun.java2d.loops.DrawLine;
+
 public class FabricantFigures implements MouseListener{
 
 	private FigureColoree figure_encours_de_fabrication;
@@ -35,6 +37,14 @@ public class FabricantFigures implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		if(nb_points < 4) {
+			// ajoute le clic dans le tableau
+			nb_points++;
+		}
+		
+		if(nb_points == 4) {
+			// dessiner la figure
+		}
 	}
 
 	@Override
