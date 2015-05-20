@@ -12,6 +12,7 @@ public abstract class FigureColoree {
 	protected Color couleur;
 	protected ArrayList<Point> tab_mem;
 	
+	
 	public FigureColoree() {
 		selected = false;
 		couleur = Color.BLACK;

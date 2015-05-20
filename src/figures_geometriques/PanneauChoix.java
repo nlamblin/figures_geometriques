@@ -21,9 +21,8 @@ public class PanneauChoix extends JPanel{
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle" });
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
-				switch (jcbType.getSelectedIndex ()) {
-				
-				}
+				fc= creeFigure(jcbType.getSelectedIndex());
+				dessin.construit(fc);
 			}
 		});
 		jcbType.setVisible(false);
@@ -31,7 +30,7 @@ public class PanneauChoix extends JPanel{
 		final JComboBox jcb= new JComboBox( new String [] { "rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
 		jcb.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
-				
+				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
 			}
 		});
 		jcb.setVisible(false);

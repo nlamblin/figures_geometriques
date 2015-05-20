@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 public class DessinFigures extends JPanel{
 
 	private ArrayList<FigureColoree> lfg;
-	
+	FabricantFigures ff;
 	public DessinFigures() {
 		lfg = new ArrayList<FigureColoree>();
 	}
@@ -21,10 +21,12 @@ public class DessinFigures extends JPanel{
 	
 	public void ajoute(FigureColoree fg) {
 		lfg.add(fg);
+		removeMouseListener(ff);
+		ff = null;
 	}
 	
 	public void construit(FigureColoree fg) {
-		FabricantFigures ff = new FabricantFigures(fg);
+		ff = new FabricantFigures(fg);
 		addMouseListener(ff);
 	}
 }
