@@ -12,6 +12,7 @@ public class FabricantFigures implements MouseListener{
 	public FabricantFigures(FigureColoree fc) {
 		figure_encours_de_fabrication = fc;
 		nb_points = 0;
+		point_cliques = new Point[100];
 	}
 	
 	@Override
