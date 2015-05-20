@@ -2,19 +2,18 @@ package figures_geometriques;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import sun.java2d.loops.DrawLine;
+import java.util.ArrayList;
 
 public class FabricantFigures implements MouseListener{
 
 	private FigureColoree figure_encours_de_fabrication;
 	private int nb_points;
-	private Point[] point_cliques;
+	private ArrayList<Point> point_cliques;
 	
 	public FabricantFigures(FigureColoree fc) {
 		figure_encours_de_fabrication = fc;
 		nb_points = 0;
-		point_cliques = new Point[100];
+		point_cliques = new ArrayList<Point>();
 	}
 	
 	@Override
