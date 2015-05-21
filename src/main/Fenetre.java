@@ -1,9 +1,12 @@
-package figures_geometriques;
+package main;
 
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import vue.DessinFigures;
+import vue.PanneauChoix;
 
 public class Fenetre extends JFrame{
 	

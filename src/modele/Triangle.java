@@ -1,4 +1,5 @@
-package figures_geometriques;
+package modele;
+
 
 public class Triangle extends Polygone {
 	

@@ -1,8 +1,11 @@
-package figures_geometriques;
+package controleur;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+
+import modele.FigureColoree;
+import modele.Point;
 
 public class FabricantFigures implements MouseListener{
 

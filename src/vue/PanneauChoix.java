@@ -1,4 +1,4 @@
-package figures_geometriques;
+package vue;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -9,6 +9,10 @@ import java.awt.event.ItemListener;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+
+import modele.FigureColoree;
+import modele.Rectangle;
+import modele.Triangle;
 
 public class PanneauChoix extends JPanel{
 

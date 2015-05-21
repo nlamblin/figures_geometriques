@@ -1,4 +1,4 @@
-package figures_geometriques;
+package modele;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package figures_geometriques;
+package modele;
 
 public class Point {
 	
