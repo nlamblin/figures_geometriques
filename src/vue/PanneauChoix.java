@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -23,7 +24,7 @@ public class PanneauChoix extends JPanel implements Observer{
 	
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
-		
+		setLayout(new GridLayout(2,3,20,10));
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle" });
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
@@ -31,7 +32,7 @@ public class PanneauChoix extends JPanel implements Observer{
 				dessin.construit(fc);
 			}
 		});
-		jcbType.setVisible(false);
+		jcbType.setEnabled(false);
 		
 		final JComboBox jcb= new JComboBox( new String [] { "rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
 		jcb.addActionListener(new ActionListener () {
@@ -39,7 +40,7 @@ public class PanneauChoix extends JPanel implements Observer{
 				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
 			}
 		});
-		jcb.setVisible(false);
+		jcb.setEnabled(false);
 		final JRadioButton jrb = new JRadioButton("Nouvelle figure");
 		add(jrb);
 		final JRadioButton jrb2 = new JRadioButton("Tracé à main levée");
@@ -54,12 +55,12 @@ public class PanneauChoix extends JPanel implements Observer{
 				if (e.getStateChange()== ItemEvent.SELECTED){
 					jrb2.setSelected(false);
 					jrb3.setSelected(false);
-					jcbType.setVisible(true);
-					jcb.setVisible(true);
+					jcbType.setEnabled(true);
+					jcb.setEnabled(true);
 				}
 				else{
-					jcbType.setVisible(false);
-					jcb.setVisible(false);
+					jcbType.setEnabled(false);
+					jcb.setEnabled(false);
 				}
 			}
 		});
@@ -69,10 +70,10 @@ public class PanneauChoix extends JPanel implements Observer{
 				if (e.getStateChange()== ItemEvent.SELECTED){
 					jrb.setSelected(false);
 					jrb3.setSelected(false);
-					jcb.setVisible(true);
+					jcb.setEnabled(true);
 				}
 				else{
-					jcb.setVisible(false);
+					jcb.setEnabled(false);
 				}
 			}
 		});
@@ -82,10 +83,10 @@ public class PanneauChoix extends JPanel implements Observer{
 				if (e.getStateChange()== ItemEvent.SELECTED){
 					jrb.setSelected(false);
 					jrb2.setSelected(false);
-					jcb.setVisible(false);
+					jcb.setEnabled(false);
 				}
 				else{
-					jcb.setVisible(false);
+					jcb.setEnabled(false);
 				}
 			}
 		});

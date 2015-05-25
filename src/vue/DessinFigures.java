@@ -13,7 +13,6 @@ import controleur.FabricantFigures;
 public class DessinFigures extends JPanel implements Observer{
 
 	private ArrayList<FigureColoree> lfg;
-	FabricantFigures ff;
 	public DessinFigures() {
 		lfg = new ArrayList<FigureColoree>();
 	}
@@ -26,19 +25,16 @@ public class DessinFigures extends JPanel implements Observer{
 	
 	public void ajoute(FigureColoree fg) {
 		lfg.add(fg);
-		removeMouseListener(ff);
-		ff = null;
+		removeMouseListener(getMouseListeners()[0]);
 	}
 	
 	public void construit(FigureColoree fg) {
-		lfg.add(fg);
-		ff = new FabricantFigures(fg);
+		FabricantFigures ff = new FabricantFigures(fg);
 		addMouseListener(ff);
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
 		
 	}
 }
