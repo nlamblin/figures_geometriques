@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -14,7 +16,7 @@ import modele.FigureColoree;
 import modele.Rectangle;
 import modele.Triangle;
 
-public class PanneauChoix extends JPanel{
+public class PanneauChoix extends JPanel implements Observer{
 
 	private FigureColoree fc;
 	private DessinFigures dessin;
@@ -123,6 +125,12 @@ public class PanneauChoix extends JPanel{
 		default :
 			return null;
 		}
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

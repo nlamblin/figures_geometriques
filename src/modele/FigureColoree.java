@@ -3,8 +3,10 @@ package modele;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Observable;
 
-public abstract class FigureColoree {
+
+public abstract class FigureColoree extends Observable{
 
 	private static final int TAILLE_CARRE_SELECTION = 50;
 	private static final int PERIPHERIE_CARRE_SELECTION = 50;

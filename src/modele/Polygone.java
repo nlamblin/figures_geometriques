@@ -3,8 +3,9 @@ package modele;
 import java.awt.Graphics;
 import java.awt.Polygon;
 import java.util.ArrayList;
+import java.util.Observable;
 
-public abstract class Polygone extends FigureColoree {
+public abstract class Polygone extends FigureColoree{
 
 	private Polygon p;
 	

@@ -2,13 +2,15 @@ package vue;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JPanel;
 
 import modele.FigureColoree;
 import controleur.FabricantFigures;
 
-public class DessinFigures extends JPanel{
+public class DessinFigures extends JPanel implements Observer{
 
 	private ArrayList<FigureColoree> lfg;
 	FabricantFigures ff;
@@ -32,5 +34,11 @@ public class DessinFigures extends JPanel{
 		lfg.add(fg);
 		ff = new FabricantFigures(fg);
 		addMouseListener(ff);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }

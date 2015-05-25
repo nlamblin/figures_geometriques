@@ -1,6 +1,9 @@
 package modele;
 
-public class Point {
+import java.util.Observable;
+
+
+public class Point extends Observable{
 	
 	private int x, y;
 	
@@ -40,5 +43,7 @@ public class Point {
 	public void translation(int dx, int dy) {
 		x += dx;
 		y += dy;
+		notify();
 	}
+
 }
