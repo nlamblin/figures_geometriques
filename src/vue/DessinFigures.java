@@ -13,6 +13,7 @@ import controleur.FabricantFigures;
 public class DessinFigures extends JPanel implements Observer{
 
 	private ArrayList<FigureColoree> lfg;
+	
 	public DessinFigures() {
 		lfg = new ArrayList<FigureColoree>();
 	}
@@ -35,6 +36,6 @@ public class DessinFigures extends JPanel implements Observer{
 
 	@Override
 	public void update(Observable o, Object arg) {
-		
+		repaint();
 	}
 }
