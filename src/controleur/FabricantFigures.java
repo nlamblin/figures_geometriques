@@ -23,7 +23,6 @@ public class FabricantFigures extends MouseAdapter{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("Passe ici");
 		if(MouseEvent.BUTTON1 == arg0.getButton()) {
 			System.out.println("passe à l'interrieur");
 			if (nb_points > point_cliques.size()){
