@@ -34,7 +34,8 @@ public abstract class Polygone extends FigureColoree{
 	}
 	
 	public void affiche(Graphics g) {
-		g.drawPolygon(p);
+		g.setColor(this.couleur);
+		g.fillPolygon(p);
 	}
 	
 }

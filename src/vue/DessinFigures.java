@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.Graphics;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -26,7 +27,10 @@ public class DessinFigures extends JPanel implements Observer{
 	
 	public void ajoute(FigureColoree fg) {
 		lfg.add(fg);
-		removeMouseListener(getMouseListeners()[0]);
+		/**for (MouseListener m : getMouseListeners()){
+			removeMouseListener(m);
+		}*/
+		
 	}
 	
 	public void construit(FigureColoree fg) {
