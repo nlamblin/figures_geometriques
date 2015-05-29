@@ -16,10 +16,12 @@ public class DessinFigures extends JPanel{
 	private ArrayList<FigureColoree> lfg;
 	
 	public DessinFigures() {
+		super();
 		lfg = new ArrayList<FigureColoree>();
 	}
 	
 	public void paintComponent(Graphics g) {
+		g.clearRect(0,0,getWidth(), getHeight());
 		for (FigureColoree fg : lfg){
 			fg.affiche(g);
 		}
@@ -33,7 +35,6 @@ public class DessinFigures extends JPanel{
 	public void construit(FigureColoree fg) {
 		FabricantFigures ff = new FabricantFigures(fg);
 		this.addMouseListener(ff);
-		repaint();
 	}
 
 }

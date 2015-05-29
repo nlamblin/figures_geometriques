@@ -25,7 +25,9 @@ public class PanneauChoix extends JPanel{
 	
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
-		setLayout(new GridLayout(2,3,20,10));
+		setBackground(Color.WHITE);
+		GridLayout gl =new GridLayout(2,3,20,10);
+		setLayout(gl);
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle" });
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
@@ -43,10 +45,13 @@ public class PanneauChoix extends JPanel{
 		});
 		jcb.setEnabled(false);
 		final JRadioButton jrb = new JRadioButton("Nouvelle figure");
+		jrb.setBackground(Color.WHITE);
 		add(jrb);
 		final JRadioButton jrb2 = new JRadioButton("Tracé à main levée");
+		jrb2.setBackground(Color.WHITE);
 		add(jrb2);
 		final JRadioButton jrb3 = new JRadioButton("Manipulations");
+		jrb3.setBackground(Color.WHITE);
 		add(jrb3);
 		add(jcbType);
 		add(jcb);

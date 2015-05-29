@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
@@ -19,12 +20,11 @@ public class Fenetre extends JFrame{
 		dessin = new DessinFigures();
 		jp.setPreferredSize(new Dimension(w,h));
 		setContentPane(jp);
-		dessin.setPreferredSize(new Dimension(1000,800));
+		jp.setLayout(new BorderLayout());
 		PanneauChoix pn = new PanneauChoix(dessin);
-		pn.setPreferredSize(new Dimension(1000,200));
 		pack();
-		jp.add(pn);
-		jp.add(dessin);
+		jp.add(pn,BorderLayout.NORTH);
+		jp.add(dessin,BorderLayout.CENTER);
 		setVisible(true);
 		requestFocusInWindow();
 	}
