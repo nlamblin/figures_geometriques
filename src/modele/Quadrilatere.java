@@ -12,5 +12,11 @@ public class Quadrilatere extends Polygone {
 		// TODO Auto-generated method stub
 		return 4;
 	}
+
+	@Override
+	public int nbClics() {
+		// TODO Auto-generated method stub
+		return 4;
+	}
 	
 }

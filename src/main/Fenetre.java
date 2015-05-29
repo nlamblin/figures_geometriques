@@ -19,8 +19,11 @@ public class Fenetre extends JFrame{
 		dessin = new DessinFigures();
 		jp.setPreferredSize(new Dimension(w,h));
 		setContentPane(jp);
+		dessin.setPreferredSize(new Dimension(1000,800));
+		PanneauChoix pn = new PanneauChoix(dessin);
+		pn.setPreferredSize(new Dimension(1000,200));
 		pack();
-		jp.add(new PanneauChoix(dessin));
+		jp.add(pn);
 		jp.add(dessin);
 		setVisible(true);
 		requestFocusInWindow();

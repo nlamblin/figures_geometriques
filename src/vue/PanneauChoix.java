@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +18,7 @@ import modele.FigureColoree;
 import modele.Rectangle;
 import modele.Triangle;
 
-public class PanneauChoix extends JPanel implements Observer{
+public class PanneauChoix extends JPanel{
 
 	private FigureColoree fc;
 	private DessinFigures dessin;
@@ -128,9 +129,4 @@ public class PanneauChoix extends JPanel implements Observer{
 		}
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-	}
-	
 }

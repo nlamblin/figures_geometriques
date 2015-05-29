@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import modele.FigureColoree;
 import controleur.FabricantFigures;
 
-public class DessinFigures extends JPanel implements Observer{
+public class DessinFigures extends JPanel{
 
 	private ArrayList<FigureColoree> lfg;
 	
@@ -27,19 +27,13 @@ public class DessinFigures extends JPanel implements Observer{
 	
 	public void ajoute(FigureColoree fg) {
 		lfg.add(fg);
-		/**for (MouseListener m : getMouseListeners()){
-			removeMouseListener(m);
-		}*/
-		
+		repaint();
 	}
 	
 	public void construit(FigureColoree fg) {
 		FabricantFigures ff = new FabricantFigures(fg);
-		addMouseListener(ff);
-	}
-
-	@Override
-	public void update(Observable o, Object arg) {
+		this.addMouseListener(ff);
 		repaint();
 	}
+
 }

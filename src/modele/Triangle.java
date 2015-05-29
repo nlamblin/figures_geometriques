@@ -16,13 +16,12 @@ public class Triangle extends Polygone {
 		// TODO Auto-generated method stub
 		return 3;
 	}
-	
+	@Override
 	public int nbClics(){
 		return 3;
 	}
 	
 	public void affiche(Graphics g){
-		g.setColor(Color.black);
 		super.affiche(g);
 	}
 	public void modifierPoint(ArrayList<Point>  tab_saisie) {

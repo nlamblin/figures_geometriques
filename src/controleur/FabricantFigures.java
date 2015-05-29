@@ -21,14 +21,13 @@ public class FabricantFigures extends MouseInputAdapter{
 		figure_encours_de_fabrication = fc;
 		nb_points = 0;
 		point_cliques = new ArrayList<Point>(fc.nbClics());
+		
 	}
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (nb_points == point_cliques.size()){
-			/**point_cliques.add(new Point(arg0.getX(),arg0.getY()));
-			figure_encours_de_fabrication.modifierPoints(point_cliques);*/
+		if (nb_points == figure_encours_de_fabrication.nbClics()){
 			figure_encours_de_fabrication.modifierPoints(point_cliques);
 			((DessinFigures) e.getSource()).ajoute(figure_encours_de_fabrication);
 			((DessinFigures) e.getSource()).removeMouseListener(this);
@@ -38,7 +37,7 @@ public class FabricantFigures extends MouseInputAdapter{
 	
 	@Override
 	public void mouseReleased(MouseEvent e){
-		if(nb_points < point_cliques.size()){
+		if(nb_points < figure_encours_de_fabrication.nbClics()){
 			//complete
 			point_cliques.add(new Point(e.getX(),e.getY()));
 			nb_points++;
