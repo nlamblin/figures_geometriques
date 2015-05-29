@@ -24,12 +24,6 @@ public class FabricantFigures extends MouseInputAdapter{
 		
 	}
 	
-	@Override
-	public void mousePressed(MouseEvent e) {
-		
-		
-			
-	}
 	
 	@Override
 	public void mouseReleased(MouseEvent e){

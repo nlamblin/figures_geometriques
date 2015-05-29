@@ -1,5 +1,6 @@
 package modele;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class Rectangle extends Quadrilatere {
@@ -10,6 +11,10 @@ public class Rectangle extends Quadrilatere {
 	
 	public int nbClics() {
 		return 2;
+	}
+	@Override
+	public void affiche(Graphics g){
+		super.affiche(g);
 	}
 	
 	public void modifierPoint(ArrayList<Point>  tab_saisie) {

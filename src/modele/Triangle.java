@@ -25,11 +25,10 @@ public class Triangle extends Polygone {
 		super.affiche(g);
 	}
 	public void modifierPoint(ArrayList<Point>  tab_saisie) {
-		ArrayList<Point> tmp = new ArrayList<Point>(4);
+		ArrayList<Point> tmp = new ArrayList<Point>(3);
 		tmp.add(tab_saisie.get(0));
-		tmp.add(new Point(tab_saisie.get(0).rendreX(), tab_saisie.get(1).rendreY()));
 		tmp.add(tab_saisie.get(1));
-		tmp.add(new Point(tab_saisie.get(1).rendreX(), tab_saisie.get(0).rendreY()));
+		tmp.add(tab_saisie.get(2));
 		super.modifierPoints(tmp);
 	}
 }

@@ -28,21 +28,28 @@ public class PanneauChoix extends JPanel{
 		setBackground(Color.WHITE);
 		GridLayout gl =new GridLayout(2,3,20,10);
 		setLayout(gl);
-		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle" });
-		jcbType.addActionListener(new ActionListener () {
-			public void actionPerformed (ActionEvent e) {
-				fc= creeFigure(jcbType.getSelectedIndex());
-				dessin.construit(fc);
-			}
-		});
-		jcbType.setEnabled(false);
 		
-		final JComboBox jcb= new JComboBox( new String [] { "rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
+		final JComboBox jcb= new JComboBox( new String [] { "Selectionnez la couleur","rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
 		jcb.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
+				dessin.repaint();
+				jcb.setEnabled(false);
 			}
 		});
+		final JComboBox jcbType= new JComboBox( new String [] { "Selectionnez la figure à construire","Rectangle","Triangle" });
+		jcbType.addActionListener(new ActionListener () {
+			public void actionPerformed (ActionEvent e) {
+				if (e.getModifiers()!=0){
+					fc= creeFigure(jcbType.getSelectedIndex());
+					dessin.construit(fc);
+					
+					jcb.setEnabled(true);
+					dessin.repaint();
+				}
+			}
+		});
+		jcbType.setEnabled(false);
 		jcb.setEnabled(false);
 		final JRadioButton jrb = new JRadioButton("Nouvelle figure");
 		jrb.setBackground(Color.WHITE);
@@ -62,7 +69,7 @@ public class PanneauChoix extends JPanel{
 					jrb2.setSelected(false);
 					jrb3.setSelected(false);
 					jcbType.setEnabled(true);
-					jcb.setEnabled(true);
+					jcb.setEnabled(false);
 				}
 				else{
 					jcbType.setEnabled(false);
@@ -100,9 +107,9 @@ public class PanneauChoix extends JPanel{
 	
 	private FigureColoree creeFigure(int i) {
 		switch(i){
-		case 0 :
+		case 1 :
 			return new Rectangle();
-		case 1 : 
+		case 2 : 
 			return new Triangle();
 		default :
 			return null;
@@ -111,23 +118,23 @@ public class PanneauChoix extends JPanel{
 	
 	private Color determineCouleur(int i) {
 		switch (i) {
-		case 0 :
-			return Color.RED ;
 		case 1 :
-			return Color.GREEN ;
+			return Color.RED ;
 		case 2 :
-			return Color.BLUE ;
+			return Color.GREEN ;
 		case 3 :
-			return Color.YELLOW ;
+			return Color.BLUE ;
 		case 4 :
-			return Color.GRAY;
+			return Color.YELLOW ;
 		case 5 :
-			return Color.MAGENTA;
+			return Color.GRAY;
 		case 6 :
-			return Color.PINK;
+			return Color.MAGENTA;
 		case 7 :
-			return Color.BLACK;
+			return Color.PINK;
 		case 8 :
+			return Color.BLACK;
+		case 9 :
 			return Color.WHITE;
 		default :
 			return null;
