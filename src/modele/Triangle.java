@@ -24,6 +24,7 @@ public class Triangle extends Polygone {
 	public void affiche(Graphics g){
 		super.affiche(g);
 	}
+	
 	public void modifierPoint(ArrayList<Point>  tab_saisie) {
 		ArrayList<Point> tmp = new ArrayList<Point>(3);
 		tmp.add(tab_saisie.get(0));
