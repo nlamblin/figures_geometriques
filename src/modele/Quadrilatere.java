@@ -30,6 +30,7 @@ public class Quadrilatere extends Polygone {
 		if (tab_saisie.size()==4)tmp.add(tab_saisie.get(3));
 		super.modifierPoints(tmp);
 	}
+	
 	public void affiche(Graphics g){
 		super.affiche(g);
 	}
