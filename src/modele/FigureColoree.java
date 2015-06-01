@@ -74,4 +74,8 @@ public abstract class FigureColoree extends Observable{
 	public void changeCouleur(Color c) {
 		couleur = c;
 	}
+	
+	public ArrayList<Point> getTab_Mem() {
+		return tab_mem;
+	}
 }
