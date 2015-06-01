@@ -18,6 +18,7 @@ import controleur.ManipulateurFormes;
 import modele.FigureColoree;
 import modele.Quadrilatere;
 import modele.Rectangle;
+import modele.TraceurForme;
 import modele.Triangle;
 
 public class PanneauChoix extends JPanel{
