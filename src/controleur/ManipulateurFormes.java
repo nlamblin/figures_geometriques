@@ -45,6 +45,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 			int j = 0;
 			while(j < lfg.get(indiceFigureProche).getTab_Mem().size()) {
 				// dessiner les carrés dans les coins ( lfg.get(indiceFigureProche).getTab_Mem().get(j) );
+				j++;
 			}
 			lfg.get(indiceFigureProche).selectionne();
 		}
