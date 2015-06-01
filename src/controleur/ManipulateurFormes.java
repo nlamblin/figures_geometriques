@@ -14,7 +14,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 	private boolean trans;
 	private ArrayList<FigureColoree> lfg;
 	
-	private ManipulateurFormes(ArrayList<FigureColoree> fc) {
+	public ManipulateurFormes(ArrayList<FigureColoree> fc) {
 		lfg = fc;
 		last_x = 0;
 		last_y = 0;
