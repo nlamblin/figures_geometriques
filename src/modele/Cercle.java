@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 public class Cercle extends FigureColoree {
 	
-	private Cercle c;
-	
 	public Cercle() {
 		super();
 	}
