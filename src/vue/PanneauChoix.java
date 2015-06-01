@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 import modele.FigureColoree;
+import modele.Quadrilatere;
 import modele.Rectangle;
 import modele.Triangle;
 
@@ -37,7 +38,7 @@ public class PanneauChoix extends JPanel{
 				jcb.setEnabled(false);
 			}
 		});
-		final JComboBox jcbType= new JComboBox( new String [] { "Selectionnez la figure à construire","Rectangle","Triangle" });
+		final JComboBox jcbType= new JComboBox( new String [] { "Selectionnez la figure à construire","Rectangle","Triangle","Quadrilataire" });
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				if (e.getModifiers()!=0){
@@ -111,6 +112,8 @@ public class PanneauChoix extends JPanel{
 			return new Rectangle();
 		case 2 : 
 			return new Triangle();
+		case 3 :
+			return new Quadrilatere();
 		default :
 			return null;
 		}
