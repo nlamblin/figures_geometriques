@@ -14,6 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import controleur.ManipulateurFormes;
 import modele.FigureColoree;
 import modele.Quadrilatere;
 import modele.Rectangle;
@@ -23,6 +24,7 @@ public class PanneauChoix extends JPanel{
 
 	private FigureColoree fc;
 	private DessinFigures dessin;
+	
 	
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
@@ -98,6 +100,7 @@ public class PanneauChoix extends JPanel{
 					jrb.setSelected(false);
 					jrb2.setSelected(false);
 					jcb.setEnabled(false);
+					dessin.activeManipulationsSouris();
 				}
 				else{
 					jcb.setEnabled(false);

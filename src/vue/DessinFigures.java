@@ -10,10 +10,12 @@ import javax.swing.JPanel;
 
 import modele.FigureColoree;
 import controleur.FabricantFigures;
+import controleur.ManipulateurFormes;
 
 public class DessinFigures extends JPanel{
 
 	private ArrayList<FigureColoree> lfg;
+	private ManipulateurFormes mf;
 	
 	public DessinFigures() {
 		super();
@@ -36,5 +38,7 @@ public class DessinFigures extends JPanel{
 		FabricantFigures ff = new FabricantFigures(fg);
 		this.addMouseListener(ff);
 	}
-
+	public void activeManipulationsSouris(){
+		mf = new ManipulateurFormes(lfg);
+	}
 }
