@@ -3,16 +3,22 @@ package controleur;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 
+import modele.FigureColoree;
 import vue.DessinFigures;
 
 public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 
-	private int indice, lastX, lastY;
+	private int indice, last_x, last_y;
 	private boolean trans;
+	private ArrayList<FigureColoree> lfg;
 	
-	private ManipulateurFormes() {
-		
+	private ManipulateurFormes(ArrayList<FigureColoree> fc) {
+		lfg = fc;
+		last_x = 0;
+		last_y = 0;
+		trans = false;
 	}
 
 	@Override
