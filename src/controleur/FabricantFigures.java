@@ -28,7 +28,6 @@ public class FabricantFigures extends MouseInputAdapter{
 	@Override
 	public void mouseReleased(MouseEvent e){
 		if(nb_points < figure_encours_de_fabrication.nbClics()){
-			//complete
 			point_cliques.add(new Point(e.getX(),e.getY()));
 			figure_encours_de_fabrication.modifierPoints(point_cliques);
 			nb_points++;
