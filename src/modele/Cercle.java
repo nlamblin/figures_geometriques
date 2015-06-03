@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class Cercle extends ConiqueCentree {
 	
-	private double rayon;
+	private double rayon=0;
 	
 	public Cercle() {
 		super();
-		rayon = 150;
 	}
 	
 	public void affiche(Graphics g){
@@ -20,13 +19,13 @@ public class Cercle extends ConiqueCentree {
 	@Override
 	public int nbPoints() {
 		// TODO Auto-generated method stub
-		return 1;
+		return 2;
 	}
 
 	@Override
 	public int nbClics() {
 		// TODO Auto-generated method stub
-		return 1;
+		return 2;
 	}
 
 	@Override
@@ -45,6 +44,15 @@ public class Cercle extends ConiqueCentree {
 		return res;
 	}
 	
+	 public void modifierPoints(ArrayList<Point> tab_saisie){
+			ArrayList<Point> tmp = new ArrayList<Point>(2);
+			if (tab_saisie.size()==2){
+				tmp.add(tab_saisie.get(0));
+				tmp.add(tab_saisie.get(1));
+				setRayon(tab_saisie.get(1).distance(tab_saisie.get(0)));
+			}
+			tab_mem=tmp;
+	}
 	public void setRayon(double r) {
 		rayon = r;
 	}
