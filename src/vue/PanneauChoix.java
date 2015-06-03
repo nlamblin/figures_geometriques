@@ -40,7 +40,6 @@ public class PanneauChoix extends JPanel{
 			public void actionPerformed (ActionEvent e) {
 				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
 				dessin.repaint();
-				jcb.setEnabled(false);
 			}
 		});
 		final JComboBox jcbType= new JComboBox( new String [] { "Selectionnez la figure à construire","Rectangle","Triangle","Quadrilataire","Losange","Cercle" });
@@ -49,8 +48,6 @@ public class PanneauChoix extends JPanel{
 				if (e.getModifiers()!=0){
 					fc= creeFigure(jcbType.getSelectedIndex());
 					dessin.construit(fc);
-					
-					jcb.setEnabled(true);
 					dessin.repaint();
 				}
 			}
@@ -75,7 +72,7 @@ public class PanneauChoix extends JPanel{
 					jrb2.setSelected(false);
 					jrb3.setSelected(false);
 					jcbType.setEnabled(true);
-					jcb.setEnabled(false);
+					jcb.setEnabled(true);
 				}
 				else{
 					jcbType.setEnabled(false);

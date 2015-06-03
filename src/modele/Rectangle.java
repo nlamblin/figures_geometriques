@@ -11,6 +11,9 @@ public class Rectangle extends Quadrilatere {
 	public int nbClics() {
 		return 2;
 	}
+	public int nbPoints(){
+		return 4;
+	}
 	@Override
 	public void affiche(Graphics g){
 		super.affiche(g);

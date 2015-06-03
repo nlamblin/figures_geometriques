@@ -15,8 +15,6 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 	
 	public ManipulateurFormes(ArrayList<FigureColoree> fc) {
 		lfg = fc;
-		last_x = 0;
-		last_y = 0;
 		trans = false;
 	}
 
@@ -28,8 +26,8 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
+		last_x = e.getX();
+		last_y = e.getY();
 	}
 
 	@Override

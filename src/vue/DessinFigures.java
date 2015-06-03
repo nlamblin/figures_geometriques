@@ -2,6 +2,8 @@ package vue;
 
 import java.awt.Graphics;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -15,7 +17,6 @@ import controleur.ManipulateurFormes;
 public class DessinFigures extends JPanel{
 
 	private ArrayList<FigureColoree> lfg;
-	private ManipulateurFormes mf;
 	
 	public DessinFigures() {
 		super();
@@ -31,6 +32,9 @@ public class DessinFigures extends JPanel{
 	
 	public void ajoute(FigureColoree fg) {
 		lfg.add(fg);
+		for (MouseListener ml : getMouseListeners()){
+			removeMouseListener(ml);
+		}
 		repaint();
 	}
 	
@@ -39,6 +43,16 @@ public class DessinFigures extends JPanel{
 		this.addMouseListener(ff);
 	}
 	public void activeManipulationsSouris(){
-		mf = new ManipulateurFormes(lfg);
+		ManipulateurFormes mf=new ManipulateurFormes(lfg);
+		addMouseListener(mf);
+		addMouseMotionListener(mf);
+	}
+	public void desactiverManipulationsSouris(){
+		for (MouseListener ml : getMouseListeners()){
+			removeMouseListener(ml);
+		}
+		for (MouseMotionListener mml : getMouseMotionListeners()){
+			removeMouseMotionListener(mml);
+		}
 	}
 }
