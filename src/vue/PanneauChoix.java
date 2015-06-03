@@ -35,18 +35,19 @@ public class PanneauChoix extends JPanel{
 		GridLayout gl =new GridLayout(2,3,20,10);
 		setLayout(gl);
 		
-		final JComboBox jcb= new JComboBox( new String [] { "Selectionnez la couleur","rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
+		final JComboBox jcb= new JComboBox( new String [] {"rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
 		jcb.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
 				dessin.repaint();
 			}
 		});
-		final JComboBox jcbType= new JComboBox( new String [] { "Selectionnez la figure à construire","Rectangle","Triangle","Quadrilataire","Losange","Cercle" });
+		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Losange","Cercle" });
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				if (e.getModifiers()!=0){
 					fc= creeFigure(jcbType.getSelectedIndex());
+					fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
 					dessin.construit(fc);
 					dessin.repaint();
 				}
@@ -73,6 +74,9 @@ public class PanneauChoix extends JPanel{
 					jrb3.setSelected(false);
 					jcbType.setEnabled(true);
 					jcb.setEnabled(true);
+					fc= creeFigure(jcbType.getSelectedIndex());
+					fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
+					dessin.construit(fc);
 				}
 				else{
 					jcbType.setEnabled(false);
@@ -111,15 +115,15 @@ public class PanneauChoix extends JPanel{
 	
 	private FigureColoree creeFigure(int i) {
 		switch(i){
-		case 1 :
+		case 0 :
 			return new Rectangle();
-		case 2 : 
+		case 1 : 
 			return new Triangle();
-		case 3 :
+		case 2 :
 			return new Quadrilatere();
-		case 4 :
+		case 3 :
 			return new Losange();
-		case 5 :
+		case 4 :
 			return new Cercle();
 		default :
 			return null;
@@ -128,23 +132,23 @@ public class PanneauChoix extends JPanel{
 	
 	private Color determineCouleur(int i) {
 		switch (i) {
-		case 1 :
+		case 0 :
 			return Color.RED ;
-		case 2 :
+		case 1 :
 			return Color.GREEN ;
-		case 3 :
+		case 2 :
 			return Color.BLUE ;
-		case 4 :
+		case 3 :
 			return Color.YELLOW ;
-		case 5 :
+		case 4 :
 			return Color.GRAY;
-		case 6 :
+		case 5 :
 			return Color.MAGENTA;
-		case 7 :
+		case 6 :
 			return Color.PINK;
-		case 8 :
+		case 7 :
 			return Color.BLACK;
-		case 9 :
+		case 8 :
 			return Color.WHITE;
 		default :
 			return null;
