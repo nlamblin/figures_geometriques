@@ -10,6 +10,7 @@ import java.awt.event.ItemListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -49,8 +50,6 @@ public class PanneauChoix extends JPanel{
 				if (e.getModifiers()!=0){
 					fc= creeFigure(jcbType.getSelectedIndex());
 					fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
-					dessin.construit(fc);
-					dessin.repaint();
 				}
 			}
 		});
@@ -64,6 +63,17 @@ public class PanneauChoix extends JPanel{
 		add(jrb2);
 		final JRadioButton jrb3 = new JRadioButton("Manipulations");
 		jrb3.setBackground(Color.WHITE);
+		final JButton jb = new JButton("Construire");
+		jb.addActionListener(new ActionListener () {
+			public void actionPerformed (ActionEvent e) {
+				if (e.getModifiers()!=0){
+					fc= creeFigure(jcbType.getSelectedIndex());
+					fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
+					dessin.construit(fc);
+					dessin.repaint();
+				}
+			}
+		});
 		add(jrb3);
 		add(jcbType);
 		add(jcb);
@@ -75,9 +85,6 @@ public class PanneauChoix extends JPanel{
 					jrb3.setSelected(false);
 					jcbType.setEnabled(true);
 					jcb.setEnabled(true);
-					fc= creeFigure(jcbType.getSelectedIndex());
-					fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
-					dessin.construit(fc);
 				}
 				else{
 					jcbType.setEnabled(false);
@@ -112,6 +119,7 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		add(jb);
 	}
 	
 	private FigureColoree creeFigure(int i) {

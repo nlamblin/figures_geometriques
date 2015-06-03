@@ -28,6 +28,7 @@ public abstract class Polygone extends FigureColoree{
 		for (Point pt : tab_saisie){
 			p.addPoint(pt.rendreX(),pt.rendreY());
 		}
+		tab_mem = tab_saisie;
 	}
 	
 	public void affiche(Graphics g) {
