@@ -20,7 +20,22 @@ public class Losange extends Quadrilatere {
 	
 	@Override
 	public void modifierPoints(ArrayList<Point>  tab_saisie) {
-		// à faire !!!
+		ArrayList<Point> tmp = new ArrayList<Point>(5);
+		if(tab_saisie.size() == 3) {
+			tmp.add(tab_saisie.get(0));
+			tmp.add(new Point(tab_saisie.get(0).rendreX(), tab_saisie.get(0).rendreY()));
+			tmp.add(tab_saisie.get(1));
+			tmp.add(new Point(tab_saisie.get(1).rendreX(), tab_saisie.get(1).rendreY()));
+			tmp.add(tab_saisie.get(2));
+			tmp.add(new Point(tab_saisie.get(2).rendreX(), tab_saisie.get(2).rendreY()));
+		}
+		double distanceEntrePointHautCentre = tab_saisie.get(0).distance(tab_saisie.get(1));
+		double distanceEntrePointGaucheCentre = tab_saisie.get(2).distance(tab_saisie.get(0));
+		
+		tmp.add(new Point(tab_saisie.get(0).rendreX(), tab_saisie.get(1).rendreY()-(int)distanceEntrePointHautCentre*2));
+		tmp.add(new Point(tab_saisie.get(2).rendreX()+(int)distanceEntrePointGaucheCentre*2, tab_saisie.get(0).rendreY()));
+		
+		super.modifierPoints(tmp);
 	}
 	
 	public void transformation(int dx, int dy, int indice) {
