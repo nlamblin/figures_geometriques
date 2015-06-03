@@ -14,7 +14,7 @@ public class Cercle extends ConiqueCentree {
 	
 	public void affiche(Graphics g){
 		g.setColor(this.couleur);
-		g.fillOval(centre.rendreX(), centre.rendreY(), (int)rayon, (int)rayon);
+		g.fillOval(rendreCentre().rendreX()-(int)rayon, rendreCentre().rendreY()-(int)rayon, (int)rayon*2, (int)rayon*2);
 	}
 
 	@Override
@@ -33,27 +33,16 @@ public class Cercle extends ConiqueCentree {
 	public boolean estDedans(int x, int y) {
 		// TODO Auto-generated method stub
 		boolean res = false;
-		if(centre.rendreX() + rayon > x) {
-			if(centre.rendreY() + rayon > y) {
-				if(centre.rendreX() - rayon < x) {
-					if(centre.rendreY() - rayon < y) {
+		if(rendreCentre().rendreX() + rayon > x) {
+			if(rendreCentre().rendreY() + rayon > y) {
+				if(rendreCentre().rendreX() - rayon < x) {
+					if(rendreCentre().rendreY() - rayon < y) {
 						res = true;
 					}
 				}
 			}
 		}
 		return res;
-	}
-
-	@Override
-	public void modifierPoints(ArrayList<Point> tab_saisie) {
-		// TODO Auto-generated method stub
-		ArrayList<Point> tmp = new ArrayList<Point>(2);
-		if(tab_saisie.size()>1) {
-			tmp.add(tab_saisie.get(0));
-			tmp.add(new Point(tab_saisie.get(0).rendreX(), tab_saisie.get(0).rendreY()));
-		}
-		super.modifierPoints(tmp);
 	}
 	
 	public void setRayon(double r) {

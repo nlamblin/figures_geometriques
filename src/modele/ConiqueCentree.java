@@ -5,11 +5,9 @@ import java.util.ArrayList;
 
 public abstract class ConiqueCentree extends FigureColoree {
 
-	protected Point centre;
 	
 	public ConiqueCentree() {
-		// TODO Auto-generated constructor stub
-		centre = new Point(0,0);
+		super();
 	}
 	
 	@Override
@@ -23,11 +21,16 @@ public abstract class ConiqueCentree extends FigureColoree {
 
 	@Override
 	public void modifierPoints(ArrayList<Point> tab_saisie) {
-		
+		ArrayList<Point> tmp = new ArrayList<Point>(1);
+		if(tab_saisie.size()==1) {
+			tmp.add(tab_saisie.get(0));
+			tmp.add(new Point(tab_saisie.get(0).rendreX(), tab_saisie.get(0).rendreY()));
+		}
+		tab_mem=tmp;
 	}
 
 	public Point rendreCentre() {
-		return centre;
+		return tab_mem.get(0);
 	}
 
 }
