@@ -7,7 +7,7 @@ import java.util.Observable;
 
 public abstract class Polygone extends FigureColoree{
 
-	private Polygon p;
+	protected Polygon p;
 	
 	public Polygone() {
 		p = new Polygon();
