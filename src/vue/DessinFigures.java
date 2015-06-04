@@ -44,8 +44,12 @@ public class DessinFigures extends JPanel{
 	public void construit(FigureColoree fg) {
 		FabricantFigures ff = new FabricantFigures(fg);
 		this.addMouseListener(ff);
+		
 	}
 	public void activeManipulationsSouris(){
+		for (MouseListener ml : getMouseListeners()){
+			removeMouseListener(ml);
+		}
 		ManipulateurFormes mf=new ManipulateurFormes(lfg);
 		addMouseListener(mf);
 		addMouseMotionListener(mf);
