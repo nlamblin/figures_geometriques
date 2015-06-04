@@ -61,11 +61,11 @@ public class DessinFigures extends JPanel{
 	public void afficherCarreSelection(Graphics g){
 		g.setColor(Color.black);
 		for (FigureColoree fg : lfg){
-			//if (fg.getSelected()){
+			if (fg.getSelected()){
 				for (Point p : fg.getTab_Mem()){
 					g.fillRect(p.rendreX()-FigureColoree.TAILLE_CARRE_SELECTION/2, p.rendreY()-FigureColoree.TAILLE_CARRE_SELECTION/2,FigureColoree.TAILLE_CARRE_SELECTION, FigureColoree.TAILLE_CARRE_SELECTION);
 				}
-			//}
+			}
 		}
 	}
 }

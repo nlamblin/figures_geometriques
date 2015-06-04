@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+import vue.DessinFigures;
 import modele.FigureColoree;
 
 public class ManipulateurFormes implements MouseListener, MouseMotionListener {
@@ -37,6 +38,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 				}
 			}
 		}
+		((DessinFigures) e.getSource()).repaint();
 	}
 
 	@Override
@@ -68,6 +70,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 				trans = true;
 			}
 		}
+		((DessinFigures) e.getSource()).repaint();
 	}
 
 	@Override
