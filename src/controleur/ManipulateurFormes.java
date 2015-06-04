@@ -62,7 +62,9 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 			last_x = e.getX();
 			last_y = e.getY();
 			for(int i=0; i<lfg.size(); i++) {
-				if(lfg.get(i))
+				if(lfg.get(i).getSelected() == true) {
+					lfg.get(i).translation(last_x, last_y);
+				}
 			}
 		}
 	}
