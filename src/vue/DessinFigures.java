@@ -11,6 +11,7 @@ import java.util.Observer;
 import javax.swing.JPanel;
 
 import modele.FigureColoree;
+import modele.Point;
 import controleur.FabricantFigures;
 import controleur.ManipulateurFormes;
 
@@ -27,6 +28,7 @@ public class DessinFigures extends JPanel{
 		g.clearRect(0,0,getWidth(), getHeight());
 		for (FigureColoree fg : lfg){
 			fg.affiche(g);
+			afficherCarreSelection(g);
 		}
 	}
 	
@@ -53,6 +55,15 @@ public class DessinFigures extends JPanel{
 		}
 		for (MouseMotionListener mml : getMouseMotionListeners()){
 			removeMouseMotionListener(mml);
+		}
+	}
+	public void afficherCarreSelection(Graphics g){
+		for (FigureColoree fg : lfg){
+			//if (fg.getSelected()){
+				for (Point p : fg.getTab_Mem()){
+					g.drawRect(p.rendreX()-25, p.rendreY()-25, 50, 50);
+				}
+			//}
 		}
 	}
 }
