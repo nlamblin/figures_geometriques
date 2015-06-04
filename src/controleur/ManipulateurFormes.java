@@ -21,6 +21,12 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
 		if(MouseEvent.BUTTON1 == e.getButton()) {
 			last_x = e.getX();
 			last_y = e.getY();
@@ -31,11 +37,6 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 				}
 			}
 		}
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -63,7 +64,8 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 			last_x = e.getX();
 			last_y = e.getY();
 			if(lfg.get(indice).getSelected() == true) {
-				lfg.get(indice).transformation(last_x, last_y, indice);
+				lfg.get(indice).translation(last_x, last_y);
+				trans = true;
 			}
 		}
 	}
