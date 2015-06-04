@@ -27,6 +27,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 			for(int i=0; i<lfg.size(); i++) {
 				if(lfg.get(i).estDedans(last_x, last_y)) {
 					lfg.get(i).selectionne();
+					indice = i;
 				}
 			}
 		}
@@ -61,10 +62,8 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 		if(MouseEvent.BUTTON1 == e.getButton()) {
 			last_x = e.getX();
 			last_y = e.getY();
-			for(int i=0; i<lfg.size(); i++) {
-				if(lfg.get(i).getSelected() == true) {
-					lfg.get(i).translation(last_x, last_y);
-				}
+			if(lfg.get(indice).getSelected() == true) {
+				lfg.get(indice).transformation(last_x, last_y, indice);
 			}
 		}
 	}
