@@ -116,6 +116,7 @@ public class PanneauChoix extends JPanel{
 				}
 				else{
 					jcb.setEnabled(false);
+					dessin.desactiverManipulationsSouris();
 				}
 			}
 		});
