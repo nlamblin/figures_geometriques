@@ -8,8 +8,8 @@ import java.util.Observable;
 
 public abstract class FigureColoree extends Observable{
 
-	private static final int TAILLE_CARRE_SELECTION = 50;
-	private static final int PERIPHERIE_CARRE_SELECTION = 50;
+	public static final int TAILLE_CARRE_SELECTION = 20;
+	public static final int PERIPHERIE_CARRE_SELECTION = 20;
 	private boolean selected;
 	protected Color couleur;
 	protected ArrayList<Point> tab_mem;
