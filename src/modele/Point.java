@@ -3,7 +3,7 @@ package modele;
 import java.util.Observable;
 
 
-public class Point extends Observable{
+public class Point{
 	
 	private int x, y;
 	
@@ -26,33 +26,23 @@ public class Point extends Observable{
 	
 	public void incrementerX(int incx) {
 		x += incx;
-		setChanged();
-		notifyObservers();
 	}
 	
 	public void incrementerY(int incy) {
 		y += incy;
-		setChanged();
-		notifyObservers();
 	}
 	
 	public void modifierX(int x) {
 		this.x = x;
-		setChanged();
-		notifyObservers();
 	}
 
 	public void modifierY(int y) {
 		this.y = y;
-		setChanged();
-		notifyObservers();
 	}
 	
 	public void translation(int dx, int dy) {
 		x += dx;
 		y += dy;
-		setChanged();
-		notifyObservers();
 	}
 
 }

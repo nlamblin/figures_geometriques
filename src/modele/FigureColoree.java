@@ -39,8 +39,8 @@ public abstract class FigureColoree extends Observable{
 	
 	public void translation (int dx, int dy) {
 		for(Point pt : tab_mem) {
-			pt.modifierX(dx);
-			pt.modifierY(dy);
+			pt.incrementerX(dx);
+			pt.incrementerY(dy);
 		}
 	}
 	

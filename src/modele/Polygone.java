@@ -36,4 +36,8 @@ public abstract class Polygone extends FigureColoree{
 		g.fillPolygon(p);
 	}
 	
+	public void translation (int dx, int dy) {
+		super.translation(dx, dy);
+		p.translate(dx, dy);
+	}
 }
