@@ -99,6 +99,7 @@ public class PanneauChoix extends JPanel{
 					jrb.setSelected(false);
 					jrb3.setSelected(false);
 					jcb.setEnabled(true);
+					
 				}
 				else{
 					jcb.setEnabled(false);

@@ -32,7 +32,8 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 			last_x = e.getX();
 			last_y = e.getY();
 			boolean select = false;
-			for(int i=0; i<lfg.size(); i++) {
+			for(int i=(lfg.size()-1); i>=0; i--) {
+				System.out.println(i+"");
 				if(lfg.get(i).estDedans(last_x, last_y)&&!select) {
 					lfg.get(i).selectionne();
 					indice = i;
