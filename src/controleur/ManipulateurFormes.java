@@ -21,13 +21,20 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(MouseEvent.BUTTON1 == e.getButton()) {
+			last_x = e.getX();
+			last_y = e.getY();
+			for(int i=0; i<lfg.size(); i++) {
+				if(lfg.get(i).estDedans(last_x, last_y)) {
+					lfg.get(i).selectionne();
+				}
+			}
+		}
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		last_x = e.getX();
-		last_y = e.getY();
+		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -51,7 +58,13 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(MouseEvent.BUTTON1 == e.getButton()) {
+			last_x = e.getX();
+			last_y = e.getY();
+			for(int i=0; i<lfg.size(); i++) {
+				if(lfg.get(i))
+			}
+		}
 	}
 
 	@Override

@@ -71,6 +71,10 @@ public abstract class FigureColoree extends Observable{
 		selected = false;
 	}
 	
+	public boolean getSelected() {
+		return selected;
+	}
+	
 	public void changeCouleur(Color c) {
 		if (tab_mem.size()!= nbPoints())couleur = c;
 	}
