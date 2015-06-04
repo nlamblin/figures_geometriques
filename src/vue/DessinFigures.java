@@ -57,6 +57,10 @@ public class DessinFigures extends JPanel{
 		for (MouseMotionListener mml : getMouseMotionListeners()){
 			removeMouseMotionListener(mml);
 		}
+		for (FigureColoree fg : lfg){
+			fg.deSelectionne();
+		}
+		repaint();
 	}
 	public void afficherCarreSelection(Graphics g){
 		g.setColor(Color.black);
