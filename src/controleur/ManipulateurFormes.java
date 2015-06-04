@@ -36,6 +36,9 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 					lfg.get(i).selectionne();
 					indice = i;
 				}
+				else {
+					lfg.get(i).deSelectionne();
+				}
 			}
 		}
 		((DessinFigures) e.getSource()).repaint();
