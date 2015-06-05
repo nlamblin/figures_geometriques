@@ -82,6 +82,7 @@ public class PanneauChoix extends JPanel{
 		add(jrb3);
 		add(jcbType);
 		add(jcb);
+		jb.setEnabled(false);
 		jrb.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
@@ -90,8 +91,10 @@ public class PanneauChoix extends JPanel{
 					jrb3.setSelected(false);
 					jcbType.setEnabled(true);
 					jcb.setEnabled(true);
+					jb.setEnabled(true);
 				}
 				else{
+					jb.setEnabled(false);
 					jcbType.setEnabled(false);
 					jcb.setEnabled(false);
 				}
