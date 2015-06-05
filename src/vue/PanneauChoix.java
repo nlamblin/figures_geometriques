@@ -36,13 +36,17 @@ public class PanneauChoix extends JPanel{
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
 		setBackground(Color.WHITE);
-		GridLayout gl =new GridLayout(2,3,20,10);
+		GridLayout gl =new GridLayout(2,4,100,10);
 		setLayout(gl);
 		
 		final JComboBox jcb= new JComboBox( new String [] {"rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
+		final JPanel jp = new JPanel();
+		jp.setBackground(determineCouleur(jcb.getSelectedIndex()));
+		jp.setPreferredSize(new Dimension(25,25));
 		jcb.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
+				jp.setBackground(determineCouleur(jcb.getSelectedIndex()));
 				if (tf!=null){
 					tf.setColor(determineCouleur(jcb.getSelectedIndex()));
 				}
@@ -50,6 +54,7 @@ public class PanneauChoix extends JPanel{
 			}
 		});
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Losange","Cercle" });
+		fc= creeFigure(jcbType.getSelectedIndex());
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				if (e.getModifiers()!=0){
@@ -80,6 +85,9 @@ public class PanneauChoix extends JPanel{
 			}
 		});
 		add(jrb3);
+		JPanel p = new JPanel();
+		p.setVisible(false);
+		add(p);
 		add(jcbType);
 		add(jcb);
 		jb.setEnabled(false);
@@ -134,6 +142,7 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		add(jp);
 		add(jb);
 	}
 	
