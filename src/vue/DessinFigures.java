@@ -47,20 +47,13 @@ public class DessinFigures extends JPanel{
 		
 	}
 	public void activeManipulationsSouris(){
-		for (MouseListener ml : getMouseListeners()){
-			removeMouseListener(ml);
-		}
+		enleverTousLesListeners();
 		ManipulateurFormes mf=new ManipulateurFormes(lfg);
 		addMouseListener(mf);
 		addMouseMotionListener(mf);
 	}
 	public void desactiverManipulationsSouris(){
-		for (MouseListener ml : getMouseListeners()){
-			removeMouseListener(ml);
-		}
-		for (MouseMotionListener mml : getMouseMotionListeners()){
-			removeMouseMotionListener(mml);
-		}
+		enleverTousLesListeners();
 		for (FigureColoree fg : lfg){
 			fg.deSelectionne();
 		}
@@ -77,6 +70,14 @@ public class DessinFigures extends JPanel{
 					g.fillRect(p.rendreX()-FigureColoree.TAILLE_CARRE_SELECTION/2, p.rendreY()-FigureColoree.TAILLE_CARRE_SELECTION/2,FigureColoree.TAILLE_CARRE_SELECTION, FigureColoree.TAILLE_CARRE_SELECTION);
 				}
 			}
+		}
+	}
+	public void enleverTousLesListeners(){
+		for (MouseListener ml : getMouseListeners()){
+			removeMouseListener(ml);
+		}
+		for (MouseMotionListener mml : getMouseMotionListeners()){
+			removeMouseMotionListener(mml);
 		}
 	}
 }

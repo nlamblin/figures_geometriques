@@ -111,12 +111,8 @@ public class PanneauChoix extends JPanel{
 				}
 				else{
 					jcb.setEnabled(false);
-					for (MouseListener ml : getMouseListeners()){
-						removeMouseListener(ml);
-					}
-					for (MouseMotionListener mml : getMouseMotionListeners()){
-						removeMouseMotionListener(mml);
-					}
+					tf=null;
+					dessin.enleverTousLesListeners();
 				}
 			}
 		});
