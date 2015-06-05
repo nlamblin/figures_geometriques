@@ -66,6 +66,9 @@ public class DessinFigures extends JPanel{
 		}
 		repaint();
 	}
+	public ArrayList<FigureColoree> getFigures(){
+		return lfg;
+	}
 	public void afficherCarreSelection(Graphics g){
 		g.setColor(Color.black);
 		for (FigureColoree fg : lfg){

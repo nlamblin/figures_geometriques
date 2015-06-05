@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -29,7 +31,7 @@ public class PanneauChoix extends JPanel{
 
 	private FigureColoree fc;
 	private DessinFigures dessin;
-	
+	private TraceurForme tf;
 	
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
@@ -41,6 +43,9 @@ public class PanneauChoix extends JPanel{
 		jcb.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				fc.changeCouleur(determineCouleur(jcb.getSelectedIndex()));
+				if (tf!=null){
+					tf.setColor(determineCouleur(jcb.getSelectedIndex()));
+				}
 				dessin.repaint();
 			}
 		});
@@ -99,10 +104,19 @@ public class PanneauChoix extends JPanel{
 					jrb.setSelected(false);
 					jrb3.setSelected(false);
 					jcb.setEnabled(true);
+					tf = new TraceurForme(dessin);
+					tf.setColor(determineCouleur(jcb.getSelectedIndex()));
+					fc= creeFigure(jcbType.getSelectedIndex());
 					
 				}
 				else{
 					jcb.setEnabled(false);
+					for (MouseListener ml : getMouseListeners()){
+						removeMouseListener(ml);
+					}
+					for (MouseMotionListener mml : getMouseMotionListeners()){
+						removeMouseMotionListener(mml);
+					}
 				}
 			}
 		});
