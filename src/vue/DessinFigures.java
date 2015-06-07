@@ -41,7 +41,24 @@ public class DessinFigures extends JPanel{
 				repaint();
 			}
 		});
+		
+		final JButton boutonEffacerFigureSelect = new JButton("Effacer la figure");
+		boutonEffacerFigureSelect.setToolTipText("Cliquez pour effacer la figure");
+		boutonEffacerFigureSelect.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				for(int i=0; i<lfg.size(); i++) {
+					if(lfg.get(i).getSelected()){
+						lfg.remove(lfg.get(i));
+						repaint();
+					}
+				}
+			}
+		});
 		add(boutonEffacer,BorderLayout.SOUTH);
+		add(boutonEffacerFigureSelect, BorderLayout.SOUTH);
 	}
 	
 	public void paintComponent(Graphics g) {
