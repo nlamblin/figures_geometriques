@@ -80,6 +80,7 @@ public class PanneauChoix extends JPanel{
 		final JRadioButton jrb3 = new JRadioButton("Manipulations");
 		jrb3.setBackground(Color.WHITE);
 		final JButton jb = new JButton("Construire");
+		jb.setToolTipText("Cliquez pour construire puis tracez vos points.");
 		jb.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				if (e.getModifiers()!=0){
@@ -91,6 +92,7 @@ public class PanneauChoix extends JPanel{
 			}
 		});
 		final JButton boutonEffacer = new JButton("Effacer Tout");
+		boutonEffacer.setToolTipText("Cliquez pour effacer tout le dessin.");
 		boutonEffacer.addActionListener(new ActionListener() {
 			
 			@Override
