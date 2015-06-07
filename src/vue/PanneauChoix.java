@@ -24,10 +24,17 @@ import modele.Triangle;
 
 public class PanneauChoix extends JPanel{
 
+	/**
+	 * attributs
+	 */
 	private FigureColoree fc;
 	private DessinFigures dessin;
 	private TraceurForme tf;
 	
+	/**
+	 * constructeur de PanneauxChoix
+	 * @param df, représente la zone de dessin associée au PanneauChoix
+	 */
 	public PanneauChoix(DessinFigures df) {
 		dessin = df;
 		setBackground(Color.WHITE);
@@ -36,6 +43,7 @@ public class PanneauChoix extends JPanel{
 		
 		final JComboBox jcb= new JComboBox( new String [] {"rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
 		jcb.setToolTipText("Choisissez la couleur de la figure");
+		
 		final JPanel jp = new JPanel();
 		jp.setBackground(determineCouleur(jcb.getSelectedIndex()));
 		jp.setPreferredSize(new Dimension(25,25));
@@ -49,6 +57,7 @@ public class PanneauChoix extends JPanel{
 				dessin.repaint();
 			}
 		});
+		
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Cercle", "Ligne droite" });
 		jcbType.setToolTipText("Choisissez la figure à réaliser");
 		fc= creeFigure(jcbType.getSelectedIndex());
@@ -60,16 +69,21 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		
 		jcbType.setEnabled(false);
 		jcb.setEnabled(false);
+		
 		final JRadioButton jrb = new JRadioButton("Nouvelle figure");
 		jrb.setBackground(Color.WHITE);
 		add(jrb);
+		
 		final JRadioButton jrb2 = new JRadioButton("Tracé à main levée");
 		jrb2.setBackground(Color.WHITE);
 		add(jrb2);
+		
 		final JRadioButton jrb3 = new JRadioButton("Manipulations");
 		jrb3.setBackground(Color.WHITE);
+		
 		final JButton jb = new JButton("Construire");
 		jb.setToolTipText("Cliquez pour construire puis tracez vos points.");
 		jb.addActionListener(new ActionListener () {
@@ -84,12 +98,16 @@ public class PanneauChoix extends JPanel{
 		});
 		
 		add(jrb3);
+		
 		JPanel p = new JPanel();
 		p.setVisible(false);
+		
 		add(p);
 		add(jcbType);
 		add(jcb);
+		
 		jb.setEnabled(false);
+		
 		jrb.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
@@ -107,6 +125,7 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		
 		jrb2.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
@@ -126,6 +145,7 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		
 		jrb3.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
@@ -146,6 +166,11 @@ public class PanneauChoix extends JPanel{
 		add(jb);
 	}
 	
+	/**
+	 * Methode qui permet de créer une figure
+	 * @param i, indice de la figure choisie dans la liste
+	 * @return, créé la figure
+	 */
 	private FigureColoree creeFigure(int i) {
 		switch(i){
 		case 0 :
@@ -165,6 +190,11 @@ public class PanneauChoix extends JPanel{
 		}
 	}
 	
+	/**
+	 * Methode qui permet de determiner la couleur d'une figure
+	 * @param i, indice de la couleur choisie dans la liste
+	 * @return la couleur choisie
+	 */
 	private Color determineCouleur(int i) {
 		switch (i) {
 		case 0 :

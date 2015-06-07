@@ -7,13 +7,21 @@ import java.util.ArrayList;
 
 import vue.DessinFigures;
 import modele.FigureColoree;
+import modele.Point;
 
 public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 
-	private int indice, last_x, last_y;
+	/**
+	 * attributs
+	 */
+	private int indice, last_x, last_y, indiceCoin;
 	private boolean trans;
 	private ArrayList<FigureColoree> lfg;
 	
+	/**
+	 * constructeur
+	 * @param fc, liste de figureColoree
+	 */
 	public ManipulateurFormes(ArrayList<FigureColoree> fc) {
 		lfg = fc;
 		trans = false;
@@ -73,9 +81,10 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 			if(lfg.get(indice).getSelected() == true) {
 				lfg.get(indice).translation(e.getX()-last_x, e.getY()-last_y);
 				trans = true;
+				
+				last_x = e.getX();
+				last_y = e.getY();
 			}
-			last_x = e.getX();
-			last_y = e.getY();
 		((DessinFigures) e.getSource()).repaint();
 		}
 	}

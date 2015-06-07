@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class Carre extends Rectangle{
 	
+	/**
+	 * constructeur
+	 */
 	public Carre() {
 		super();
 	}
@@ -12,7 +15,7 @@ public class Carre extends Rectangle{
 	public int nbClics() {
 		return 2;
 	}
-	
+
 	public int nbPoints(){
 		return 4;
 	}

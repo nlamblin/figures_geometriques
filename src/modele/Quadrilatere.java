@@ -6,6 +6,9 @@ import java.util.ArrayList;
 
 public class Quadrilatere extends Polygone {
 
+	/**
+	 * constructeur
+	 */
 	public Quadrilatere() {
 		super();
 	}

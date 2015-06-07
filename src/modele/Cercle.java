@@ -5,8 +5,14 @@ import java.util.ArrayList;
 
 public class Cercle extends ConiqueCentree {
 	
+	/**
+	 * attributs
+	 */
 	private double rayon=0;
 	
+	/**
+	 * constructeur
+	 */
 	public Cercle() {
 		super();
 	}
@@ -53,6 +59,11 @@ public class Cercle extends ConiqueCentree {
 			}
 			tab_mem=tmp;
 	}
+	 
+	/**
+	 * methode qui modifie le rayon du cercle
+	 * @param r, nouveau rayon
+	 */
 	public void setRayon(double r) {
 		rayon = r;
 	}

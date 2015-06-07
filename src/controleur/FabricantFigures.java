@@ -14,17 +14,22 @@ import modele.Point;
 
 public class FabricantFigures extends MouseInputAdapter{
 
+	/**
+	 * attributs
+	 */
 	private FigureColoree figure_encours_de_fabrication;
 	private int nb_cliques;
 	private ArrayList<Point> point_cliques;
 	
+	/**
+	 * constructeur
+	 * @param fc, figure coloree à fabriquer
+	 */
 	public FabricantFigures(FigureColoree fc) {
 		figure_encours_de_fabrication = fc;
 		nb_cliques = 0;
 		point_cliques = new ArrayList<Point>(fc.nbClics());
-		
 	}
-	
 	
 	@Override
 	public void mouseReleased(MouseEvent e){

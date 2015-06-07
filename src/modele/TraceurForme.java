@@ -11,19 +11,34 @@ import java.util.ArrayList;
 import vue.DessinFigures;
 
 public class TraceurForme implements MouseListener, MouseMotionListener{
+	
+	/**
+	 * attributs
+	 */
 	private Color c = Color.BLACK;
 	private int lastX,lastY,x1,y1;
 	private boolean dessiner = false;
 	private ArrayList<Trait> lTraits;
 	private DessinFigures ds;
+	
+	/**
+	 * constructeur
+	 * @param ds, dessin dans lequel on dessine
+	 */
 	public TraceurForme(DessinFigures ds) {
 		this.ds=ds;
 		ds.addMouseListener(this);
 		ds.addMouseMotionListener(this);
 	}
+	
+	/**
+	 * methode qui modifie la couleur du trace
+	 * @param c, nouvelle couleur
+	 */
 	public void setColor(Color c){
 		this.c = c;
 	}
+	
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		if (dessiner){

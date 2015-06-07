@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class LigneDroite extends FigureColoree {
 
+	/**
+	 * constructeur
+	 */
 	public LigneDroite() {
 		super();
 	}
@@ -47,7 +50,7 @@ public class LigneDroite extends FigureColoree {
 		}
 		tab_mem = tmp;
 	}
-	
+
 	public void affiche(Graphics g){
 		g.setColor(this.couleur);
 		g.drawLine(tab_mem.get(0).rendreX(), tab_mem.get(0).rendreY(), tab_mem.get(1).rendreX(), tab_mem.get(1).rendreY());

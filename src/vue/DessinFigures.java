@@ -2,19 +2,12 @@ package vue;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -26,8 +19,14 @@ import controleur.ManipulateurFormes;
 
 public class DessinFigures extends JPanel{
 
+	/**
+	 * attributs
+	 */
 	private ArrayList<FigureColoree> lfg;
 	
+	/**
+	 * constructeur
+	 */
 	public DessinFigures() {
 		super();
 		lfg = new ArrayList<FigureColoree>();
@@ -63,6 +62,9 @@ public class DessinFigures extends JPanel{
 		add(boutonEffacerFigureSelect, BorderLayout.NORTH);
 	}
 	
+	/**
+	 * methode qui redessine toutes les figures du dessin
+	 */
 	public void paintComponent(Graphics g) {
 		g.clearRect(0,0,getWidth(), getHeight());
 		for (FigureColoree fg : lfg){
@@ -71,6 +73,10 @@ public class DessinFigures extends JPanel{
 		}
 	}
 	
+	/**
+	 * methode qui ajoute une figure coloree
+	 * @param fg, nouvelle figure
+	 */
 	public void ajoute(FigureColoree fg) {
 		lfg.add(fg);
 		for (MouseListener ml : getMouseListeners()){
@@ -79,17 +85,29 @@ public class DessinFigures extends JPanel{
 		repaint();
 	}
 	
+	/**
+	 * methode qui construit une figure
+	 * @param fg, figure à construire
+	 */
 	public void construit(FigureColoree fg) {
 		FabricantFigures ff = new FabricantFigures(fg);
 		this.addMouseListener(ff);
 		
 	}
+	
+	/**
+	 * methode qui active les manipulations
+	 */
 	public void activeManipulationsSouris(){
 		enleverTousLesListeners();
 		ManipulateurFormes mf=new ManipulateurFormes(lfg);
 		addMouseListener(mf);
 		addMouseMotionListener(mf);
 	}
+	
+	/**
+	 * methode qui desactive les manipulations
+	 */
 	public void desactiverManipulationsSouris(){
 		enleverTousLesListeners();
 		for (FigureColoree fg : lfg){
@@ -97,9 +115,19 @@ public class DessinFigures extends JPanel{
 		}
 		repaint();
 	}
+	
+	/**
+	 * accesseur de l'attributs lfg
+	 * @return lfg
+	 */
 	public ArrayList<FigureColoree> getFigures(){
 		return lfg;
 	}
+	
+	/**
+	 * mehtode qui affiche les carres de selection
+	 * @param g, environnement graphique
+	 */
 	public void afficherCarreSelection(Graphics g){
 		g.setColor(Color.black);
 		for (FigureColoree fg : lfg){
@@ -110,6 +138,10 @@ public class DessinFigures extends JPanel{
 			}
 		}
 	}
+	
+	/**
+	 * methode qui permet de retirer tous les listeners
+	 */
 	public void enleverTousLesListeners(){
 		for (MouseListener ml : getMouseListeners()){
 			removeMouseListener(ml);
@@ -119,6 +151,10 @@ public class DessinFigures extends JPanel{
 		}
 	}
 	
+	/**
+	 * methode qui modifie la liste
+	 * @param l, nouvelle liste
+	 */
 	public void setLFG(ArrayList<FigureColoree> l) {
 		lfg = l;
 	}

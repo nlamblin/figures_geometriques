@@ -6,8 +6,14 @@ import java.util.ArrayList;
 
 public abstract class Polygone extends FigureColoree{
 
+	/**
+	 * attribut
+	 */
 	protected Polygon p;
 	
+	/**
+	 * constructeur
+	 */
 	public Polygone() {
 		p = new Polygon();
 	}
