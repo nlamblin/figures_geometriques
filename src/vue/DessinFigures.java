@@ -1,8 +1,11 @@
 package vue;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseMotionListener;
@@ -10,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import modele.FigureColoree;
@@ -24,6 +28,18 @@ public class DessinFigures extends JPanel{
 	public DessinFigures() {
 		super();
 		lfg = new ArrayList<FigureColoree>();
+		setLayout(new BorderLayout());
+		final JButton boutonEffacer = new JButton("Effacer Tout");
+		boutonEffacer.setToolTipText("Cliquez pour effacer tout le dessin.");
+		boutonEffacer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				lfg = new ArrayList<FigureColoree>();
+				repaint();
+			}
+		});
+		add(boutonEffacer,BorderLayout.SOUTH);
 	}
 	
 	public void paintComponent(Graphics g) {
