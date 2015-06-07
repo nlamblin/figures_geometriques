@@ -20,7 +20,6 @@ import javax.swing.JPanel;
 
 import modele.FigureColoree;
 import modele.Point;
-import controleur.EntreeClavier;
 import controleur.FabricantFigures;
 import controleur.ManipulateurFormes;
 
@@ -99,11 +98,6 @@ public class DessinFigures extends JPanel{
 		for (MouseMotionListener mml : getMouseMotionListeners()){
 			removeMouseMotionListener(mml);
 		}
-	}
-
-	public ArrayList<FigureColoree> getLFG() {
-		// TODO Auto-generated method stub
-		return lfg;
 	}
 	
 	public void setLFG(ArrayList<FigureColoree> l) {
