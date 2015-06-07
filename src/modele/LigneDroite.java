@@ -41,15 +41,16 @@ public class LigneDroite extends FigureColoree {
 	public void modifierPoints(ArrayList<Point> tab_saisie) {
 		// TODO Auto-generated method stub
 		ArrayList<Point> tmp = new ArrayList<Point>(2);
-		if(tab_saisie.size() < 1) {
+		if(tab_saisie.size() > 1) {
 			tmp.add(tab_saisie.get(0));
 			tmp.add(tab_saisie.get(1));
 		}
+		tab_mem = tmp;
 	}
 	
 	public void affiche(Graphics g){
-		g.drawLine(tab_mem.get(0).rendreX(), tab_mem.get(0).rendreY(), tab_mem.get(1).rendreX(), tab_mem.get(1).rendreY());
 		g.setColor(this.couleur);
+		g.drawLine(tab_mem.get(0).rendreX(), tab_mem.get(0).rendreY(), tab_mem.get(1).rendreX(), tab_mem.get(1).rendreY());
 	}
 
 	

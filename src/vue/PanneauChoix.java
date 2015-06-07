@@ -12,6 +12,8 @@ import java.awt.event.MouseMotionListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javafx.scene.effect.Lighting;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -21,6 +23,7 @@ import controleur.ManipulateurFormes;
 import modele.Carre;
 import modele.Cercle;
 import modele.FigureColoree;
+import modele.LigneDroite;
 import modele.Losange;
 import modele.Quadrilatere;
 import modele.Rectangle;
@@ -53,7 +56,7 @@ public class PanneauChoix extends JPanel{
 				dessin.repaint();
 			}
 		});
-		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Losange","Cercle" });
+		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Losange","Cercle","Ligne Droite" });
 		fc= creeFigure(jcbType.getSelectedIndex());
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
@@ -160,6 +163,8 @@ public class PanneauChoix extends JPanel{
 			return new Losange();
 		case 5 :
 			return new Cercle();
+		case 6 :
+			return new LigneDroite();
 		default :
 			return null;
 		}
