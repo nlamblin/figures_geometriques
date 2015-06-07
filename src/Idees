@@ -1,7 +1,7 @@
 - suppression avec la touche suppr de la figure selectionnée
 - resolution du probleme ou suppression de losange
 - pouvoir étendre la figure à partir d'un coin
-- pouvoir dessiner des lignes droites
+- pouvoir dessiner des lignes droites /////////////////// FAIT
 - bouton tout effacer
 - bouton effacer dernière figure
 - explication de ce que fait le bouton "construire" quand le curseur est dessus
