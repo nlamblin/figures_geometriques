@@ -46,6 +46,7 @@ public class PanneauChoix extends JPanel{
 		setLayout(gl);
 		
 		final JComboBox jcb= new JComboBox( new String [] {"rouge" ,"vert" ,"bleu","jaune","gris","violet","rose","noir","blanc" });
+		jcb.setToolTipText("Choisissez la couleur de la figure");
 		final JPanel jp = new JPanel();
 		jp.setBackground(determineCouleur(jcb.getSelectedIndex()));
 		jp.setPreferredSize(new Dimension(25,25));
@@ -60,6 +61,7 @@ public class PanneauChoix extends JPanel{
 			}
 		});
 		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Losange","Cercle", "Ellipse", "Ligne Droite" });
+		jcbType.setToolTipText("Choisissez la figure à réaliser");
 		fc= creeFigure(jcbType.getSelectedIndex());
 		jcbType.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
