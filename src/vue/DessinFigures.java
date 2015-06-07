@@ -6,6 +6,8 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseMotionListener;
@@ -18,6 +20,7 @@ import javax.swing.JPanel;
 
 import modele.FigureColoree;
 import modele.Point;
+import controleur.EntreeClavier;
 import controleur.FabricantFigures;
 import controleur.ManipulateurFormes;
 
