@@ -24,10 +24,8 @@ import javax.swing.JRadioButton;
 import controleur.ManipulateurFormes;
 import modele.Carre;
 import modele.Cercle;
-import modele.Ellipse;
 import modele.FigureColoree;
 import modele.LigneDroite;
-import modele.Losange;
 import modele.Quadrilatere;
 import modele.Rectangle;
 import modele.TraceurForme;
@@ -60,7 +58,7 @@ public class PanneauChoix extends JPanel{
 				dessin.repaint();
 			}
 		});
-		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Losange","Cercle", "Ellipse", "Ligne Droite" });
+		final JComboBox jcbType= new JComboBox( new String [] { "Rectangle","Triangle","Quadrilataire","Carré","Cercle", "Ligne droite" });
 		jcbType.setToolTipText("Choisissez la figure à réaliser");
 		fc= creeFigure(jcbType.getSelectedIndex());
 		jcbType.addActionListener(new ActionListener () {
@@ -168,12 +166,8 @@ public class PanneauChoix extends JPanel{
 		case 3 :
 			return new Carre();
 		case 4 :
-			return new Losange();
-		case 5 :
 			return new Cercle();
-		case 6 :
-			return new Ellipse();
-		case 7 :
+		case 5 :
 			return new LigneDroite();
 		default :
 			return null;
