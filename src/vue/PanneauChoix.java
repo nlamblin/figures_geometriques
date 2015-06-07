@@ -7,8 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -88,6 +90,17 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		final JButton boutonEffacer = new JButton("Effacer Tout");
+		boutonEffacer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				ArrayList<FigureColoree> l = new ArrayList<>();
+				dessin.setLFG(l);
+				dessin.repaint();
+			}
+		});
 		add(jrb3);
 		JPanel p = new JPanel();
 		p.setVisible(false);
@@ -146,8 +159,10 @@ public class PanneauChoix extends JPanel{
 				}
 			}
 		});
+		
 		add(jp);
 		add(jb);
+		add(boutonEffacer);
 	}
 	
 	private FigureColoree creeFigure(int i) {

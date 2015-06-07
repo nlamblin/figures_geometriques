@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
@@ -79,5 +80,14 @@ public class DessinFigures extends JPanel{
 		for (MouseMotionListener mml : getMouseMotionListeners()){
 			removeMouseMotionListener(mml);
 		}
+	}
+
+	public ArrayList<FigureColoree> getLFG() {
+		// TODO Auto-generated method stub
+		return lfg;
+	}
+	
+	public void setLFG(ArrayList<FigureColoree> l) {
+		lfg = l;
 	}
 }
