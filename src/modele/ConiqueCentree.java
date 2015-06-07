@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public abstract class ConiqueCentree extends FigureColoree {
 
-	
 	public ConiqueCentree() {
 		super();
 	}
